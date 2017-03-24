@@ -100,21 +100,22 @@ public class WelcomeActivity extends AppCompatActivity {
 
     private void addBottomDots(int currentPage) {
         dots = new TextView[layouts.length];
-
-        int[] colorsActive = getResources().getIntArray(R.array.array_dot_active);
-        int[] colorsInactive = getResources().getIntArray(R.array.array_dot_inactive);
-
         dotsLayout.removeAllViews();
         for (int i = 0; i < dots.length; i++) {
             dots[i] = new TextView(this);
-            dots[i].setText(Html.fromHtml("&#8226;"));
-            dots[i].setTextSize(35);
-            dots[i].setTextColor(colorsInactive[currentPage]);
+            dots[i].setText(Html.fromHtml("&#9675;"));
+            dots[i].setTextSize(20);
+            dots[i].setTextColor(Color.WHITE);
             dotsLayout.addView(dots[i]);
         }
 
-        if (dots.length > 0)
-            dots[currentPage].setTextColor(colorsActive[currentPage]);
+        if (dots.length > 0){
+            dots[currentPage].setTextColor(Color.WHITE);
+            dots[currentPage].setText(Html.fromHtml("&#9679;"));
+            dots[currentPage].setTextSize(20);
+        }
+
+        //
     }
 
     private int getItem(int i) {

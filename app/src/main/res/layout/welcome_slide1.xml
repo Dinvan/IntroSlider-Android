@@ -2,6 +2,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@color/bg_screen1">
 
     <LinearLayout
@@ -11,9 +12,11 @@
         android:gravity="center_horizontal"
         android:orientation="vertical">
 
-        <ImageView
+        <org.snowcorp.app.CircleImageView
             android:layout_width="@dimen/img_width_height"
             android:layout_height="@dimen/img_width_height"
+
+            android:background="@color/dot_dark_screen1"
             android:src="@drawable/ic_food" />
 
         <TextView
@@ -27,7 +30,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="@dimen/margin_top"
             android:paddingLeft="@dimen/desc_padding"
             android:paddingRight="@dimen/desc_padding"
             android:text="@string/slide_1_desc"
