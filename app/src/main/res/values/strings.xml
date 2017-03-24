@@ -1,9 +1,9 @@
 <resources>
     <string name="app_name">Intro Slider</string>
     <string name="title_activity_welcome">Home Screen</string>
-    <string name="next">NEXT</string>
+    <string name="next">Continue</string>
     <string name="skip">SKIP</string>
-    <string name="start">GOT IT</string>
+    <string name="start">I GOT IT!</string>
 
     <string name="slide_1_title">Hello Food!</string>
     <string name="slide_1_desc">The easiest way to order food from your favourite restaurant!</string>
