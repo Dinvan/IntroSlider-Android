@@ -16,4 +16,9 @@
         android:layout_height="230dp"
         fresco:placeholderImage="@drawable/ic_food"
         />
+    <Button
+        android:id="@+id/btnGenNotification"
+        android:layout_width="match_parent"
+        android:text="Notification"
+        android:layout_height="wrap_content" />
 </RelativeLayout>
