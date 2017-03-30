@@ -36,6 +36,7 @@ import com.facebook.drawee.view.SimpleDraweeView;
 import com.facebook.imagepipeline.image.ImageInfo;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Random;
 
 public class MainActivity extends AppCompatActivity {
@@ -94,7 +95,7 @@ public class MainActivity extends AppCompatActivity {
      static ArrayList<String> notifications = new ArrayList<>();
     public   void generateNotification(Context context, String messageBody) {
         Intent deleteIntent = new Intent(ACTION_NOTIFICATION_DELETE);
-        PendingIntent   mDeletePendingIntent =  PendingIntent.getBroadcast(context, 0,deleteIntent, PendingIntent.FLAG_ONE_SHOT);
+        PendingIntent   mDeletePendingIntent =  PendingIntent.getBroadcast(context, 0,deleteIntent, PendingIntent.FLAG_CANCEL_CURRENT);
         startWFApplication().addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
 
 
@@ -113,11 +114,13 @@ public class MainActivity extends AppCompatActivity {
         inboxStyle.setSummaryText("You have "+notifications.size()+" Notifications.");
         // Moves events into the expanded layout
 
-
-
-
         for (int i=0; i < notifications.size(); i++) {
-            inboxStyle.addLine(notifications.get(i));
+            if(i<7){
+                inboxStyle.addLine(notifications.get(i));
+            }else{
+                break;
+            }
+
         }
         // Moves the expanded layout object into the notification object.
         notificationBuilder.setStyle(inboxStyle);
